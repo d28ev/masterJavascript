@@ -23,12 +23,15 @@ function fetchData(){
     .catch(error); */
 
     //using async await 
+    console.log("before async function");
+    
     fetchDataAsync();
+
+    console.log("after async function");
     
 }
 
 async function fetchDataAsync(){
-    alert('fadjan');
     var promise = await fetch('https://www.abibliadigital.com.br/api/books');
     var data = await promise.json();
     updateBooks(data);
